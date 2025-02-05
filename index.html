@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Diseño Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="menu-hamburguesa" onclick="toggleMenu(event)">
+                &#9776; Datos
+                <div id="menu" class="menu-content">
+                    <button onclick="toggleDatos(event)">Presionar</button>
+                    <div id="datos" style="display: none;">
+                        <p><strong>Nombre:</strong> Luis Daniel Quispe C</p>
+                        <p><strong>Código SAGA:</strong> C12796-5</p>
+                        <p><strong>Carrera:</strong> Informática</p>
+                        <p><strong>Semestre:</strong> Tercero</p>
+                    </div>
+                    <button onclick="toggleAbreme(event)">Ábreme</button>
+                    <div id="abreme" style="display: none;">
+                        <p>Si están viendo esto es porque sí se pudo JAJAJAJAJ</p>
+                        <p>Inge, me re costó hacer esta cosa, póngame 10</p>
+                    </div>
+                </div>
+            </div>
+            <h1>Fundamentos de Diseño Web</h1>
+            <nav>
+                <ul>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="introduccion" class="section">
+        <div class="container">
+            <h2>Introducción</h2>
+            <p>El diseño web es una disciplina que combina creatividad y tecnología para crear experiencias digitales atractivas y funcionales. En esta materia, aprenderás los fundamentos necesarios para construir sitios web utilizando HTML y CSS.</p>
+        </div>
+    </section>
+
+    <section id="html" class="section">
+        <div class="container">
+            <h2>HTML</h2>
+            <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Define la estructura y el contenido de una página mediante el uso de etiquetas y elementos.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hola, Mundo!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+    </section>
+
+    <section id="css" class="section">
+        <div class="container">
+            <h2>CSS</h2>
+            <p>CSS (Cascading Style Sheets) es un lenguaje utilizado para definir el estilo y la presentación de un documento HTML. Con CSS, puedes controlar el diseño, los colores, las fuentes y más.</p>
+            <pre><code>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #007BFF;
+}</code></pre>
+        </div>
+    </section>
+
+    <section id="recursos" class="section">
+        <div class="container">
+            <h2>Recursos</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">Documentación de HTML en MDN</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">Documentación de CSS en MDN</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools - Tutoriales de HTML y CSS</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Fundamentos de Diseño Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(event) {
+            event.stopPropagation();
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleDatos(event) {
+            event.stopPropagation();
+            var datos = document.getElementById("datos");
+            datos.style.display = datos.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleAbreme(event) {
+            event.stopPropagation();
+            var abreme = document.getElementById("abreme");
+            abreme.style.display = abreme.style.display === "block" ? "none" : "block";
+        }
+
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menu");
+            if (!event.target.closest(".menu-hamburguesa")) {
+                menu.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
